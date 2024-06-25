@@ -7,7 +7,7 @@ from tempfile import NamedTemporaryFile
 asr_model = nemo_asr.models.EncDecCTCModel.from_pretrained(model_name="QuartzNet15x5Base-En")
 
 # Initialize emotion recognition model
-emotion_classifier = pipeline("text-classification", model="bhadresh-savani/bert-base-go-emotion", return_all_scores=True)
+emotion_classifier = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base", return_all_scores=True)
 
 def transcribe_audio(audio_path):
     transcript = asr_model.transcribe([audio_path])[0]
